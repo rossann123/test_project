@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Box2 from "./components/Box2";
+import Box1 from "./components/Box1";
+import NavBar1 from "./components/NavBar1";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello World
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    return <div className="App">
+        <NavBar1 component={"NavBar1"}/>
+        <Box1 name={"Anna"}/>
+        <Box2 name={"Hoyt thinks the coolest color is red"} />
+        <Box2 name={"Kenzie thinks the coolest color is pink"}/>
+        <Box2 name={"Emily thinks the coolest color is purple"}/>
     </div>
-  );
 }
 
 export default App;
