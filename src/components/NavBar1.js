@@ -5,7 +5,7 @@ class NavBar1 extends Component {
         return (
             <div>
                 <ul id="nav">
-                    <li>>Home</li>
+                    <li>Home</li>
                     <li>About</li>
                     <li>FAQ</li>
                     <li>Contact</li>
