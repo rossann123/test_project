@@ -22,9 +22,8 @@ function App() {
         <Block borderColor={"purple"} backColor={"green"}/>
         <Block borderColor={"blue"} backColor={"yellow"}/>
 
-        <Colorblocks borderColor={"blue"} backColor={"red"}/>
-        <Colorblocks borderColor={"green"} backColor={"blue"}/>
-        <Colorblocks borderColor={"red"} backColor={"green"}/>
+        <Colorblocks/>
+
 
 
 
