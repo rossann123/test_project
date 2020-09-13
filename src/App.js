@@ -12,7 +12,7 @@ import './components/Colorblocks'
 
 
 function App(props) {
-    const [toggle]=React.useState(props.backColor, props.borderColor)
+
     let [backColor, setColor]=React.useState(props.backColor)
     let [borderColor, setColor2]=React.useState(props.borderColor)
     const onClick = ()=> {
@@ -36,7 +36,7 @@ function App(props) {
         <Block borderColor={"black"} backColor={"red"}/>
         <Block borderColor={"purple"} backColor={"green"}/>
         <Block borderColor={"blue"} backColor={"yellow"}/>
-        {toggle}
+
         <Colorblocks borderColor={"blue"} backColor={"red"}/>
         <Colorblocks borderColor={"blue"} backColor={"red"}/>
         <Colorblocks borderColor={"blue"} backColor={"red"}/>
