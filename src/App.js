@@ -11,24 +11,9 @@ import './components/Colorblocks'
 
 
 
-function App(props) {
+function App() {
 
-    let [backColor, setColor]=React.useState(props.backColor)
-    let [borderColor, setColor2]=React.useState(props.borderColor)
-    const onClick = ()=> {
-        setColor("red");
-        setColor2("blue");
-        if (onClick(backColor = "red", borderColor="blue")){
-            setColor("blue");
-            setColor2("green");
-        }
-        else {
-            if (onClick(backColor = "blue", borderColor = "green")){
-                setColor("green");
-                setColor2("red");
-            }
-        }
-    };
+
     return <>
         <Rectangle/>
         <Rectangle/>
@@ -38,8 +23,8 @@ function App(props) {
         <Block borderColor={"blue"} backColor={"yellow"}/>
 
         <Colorblocks borderColor={"blue"} backColor={"red"}/>
-        <Colorblocks borderColor={"blue"} backColor={"red"}/>
-        <Colorblocks borderColor={"blue"} backColor={"red"}/>
+        <Colorblocks borderColor={"green"} backColor={"blue"}/>
+        <Colorblocks borderColor={"red"} backColor={"green"}/>
 
 
 
