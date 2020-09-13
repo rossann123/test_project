@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './style/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+// eslint-disable-next-line no-unused-expressions,react/style-prop-object
+<div style={"html"}/>
 ReactDOM.render(
   <React.StrictMode>
     <App />

@@ -1,18 +1,51 @@
 import React from 'react';
+import './style/App.css';
+import Rectangle from "./components/Rectangle";
+import Block from "./components/Block";
+import Colorblocks from "./components/Colorblocks";
+import './style/index.css';
+import './index';
+import './components/Colorblocks'
 
-import './App.css';
-import Box2 from "./components/Box2";
-import Box1 from "./components/Box1";
-import NavBar1 from "./components/NavBar1";
-function App() {
 
-    return <div className="App">
-        <NavBar1 component={"NavBar1"}/>
-        <Box1 name={"Anna"}/>
-        <Box2 name={"Hoyt thinks the coolest color is red"} />
-        <Box2 name={"Kenzie thinks the coolest color is pink"}/>
-        <Box2 name={"Emily thinks the coolest color is purple"}/>
-    </div>
+
+
+
+function App(props) {
+    const [toggle]=React.useState(props.backColor, props.borderColor)
+    let [backColor, setColor]=React.useState(props.backColor)
+    let [borderColor, setColor2]=React.useState(props.borderColor)
+    const onClick = ()=> {
+        setColor("red");
+        setColor2("blue");
+        if (onClick(backColor = "red", borderColor="blue")){
+            setColor("blue");
+            setColor2("green");
+        }
+        else {
+            if (onClick(backColor = "blue", borderColor = "green")){
+                setColor("green");
+                setColor2("red");
+            }
+        }
+    };
+    return <>
+        <Rectangle/>
+        <Rectangle/>
+        <Rectangle/>
+        <Block borderColor={"black"} backColor={"red"}/>
+        <Block borderColor={"purple"} backColor={"green"}/>
+        <Block borderColor={"blue"} backColor={"yellow"}/>
+        {toggle}
+        <Colorblocks borderColor={"blue"} backColor={"red"}/>
+        <Colorblocks borderColor={"blue"} backColor={"red"}/>
+        <Colorblocks borderColor={"blue"} backColor={"red"}/>
+
+
+
+    </>
+
+
 }
 
 export default App;
