@@ -1,11 +1,15 @@
-const style = {
+.box{
 
-    backgroundColor: "blue",
-    height: "100px",
-    width: "500px",
-    borderColor: "orange",
-    borderStyle: "dashed",
-    borderWeight: "3px"
+    minHeight: "100px",
+    maxWidth: "500px"
+
 
 }
+
+.theOtherBox{
+    background-color:"red",
+    height:"100px",
+    width:"500px"
+}
+
 export default style;
