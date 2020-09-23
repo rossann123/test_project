@@ -3,6 +3,10 @@ import Cool from "./components/Cool";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
 import Data from "./components/Data";
+import Green from "./components/Green";
+import Red from "./components/Red";
+import Blue from "./components/Blue";
+import Objects from "./components/Objects";
 import{
     BrowserRouter as Router,
     Switch,
@@ -19,8 +23,12 @@ function App() {
             <Router>
                 <Nav/>
                 <Switch>
-                    <Route path={"/data/:id"} component={Data}/>
+                    <Route path={"/Red"} component={Red}/>
+                    <Route path={"/Green"} component={Green}/>
+                    <Route path={"/Blue"} component={Blue}/>
+                    <Route path={"/data"} component={Data}/>
                     <Route path={"/cool"} component={Cool}/>
+                    <Route path={"/Objects"} component={Objects}/>
                     <Route path={"/"} component={Home}/>
 
                 </Switch>
