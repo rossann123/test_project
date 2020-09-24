@@ -10,6 +10,7 @@ function Block(props) {
 
 
 
+
     return <div style={{borderStyle:"solid", height:"100px", width:"100px", borderWidth:"2px", borderColor:borderColor, backgroundColor:backColor}}>
 
     </div>

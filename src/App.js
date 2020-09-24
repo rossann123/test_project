@@ -2,7 +2,6 @@ import React from 'react';
 import Cool from "./components/Cool";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
-import Data from "./components/Data";
 import Green from "./components/Green";
 import Red from "./components/Red";
 import Blue from "./components/Blue";
@@ -26,7 +25,7 @@ function App() {
                     <Route path={"/Red"} component={Red}/>
                     <Route path={"/Green"} component={Green}/>
                     <Route path={"/Blue"} component={Blue}/>
-                    <Route path={"/data"} component={Data}/>
+                    <Route path={"/data"} component={Objects}/>
                     <Route path={"/cool"} component={Cool}/>
                     <Route path={"/Objects"} component={Objects}/>
                     <Route path={"/"} component={Home}/>
