@@ -6,6 +6,7 @@ import Green from "./components/Green";
 import Red from "./components/Red";
 import Blue from "./components/Blue";
 import Objects from "./components/Objects";
+import Data from "./components/Data";
 import{
     BrowserRouter as Router,
     Switch,
@@ -25,7 +26,7 @@ function App() {
                     <Route path={"/Red"} component={Red}/>
                     <Route path={"/Green"} component={Green}/>
                     <Route path={"/Blue"} component={Blue}/>
-                    <Route path={"/data"} component={Objects}/>
+                    <Route path={"/data/:id"} component={Data}/>
                     <Route path={"/cool"} component={Cool}/>
                     <Route path={"/Objects"} component={Objects}/>
                     <Route path={"/"} component={Home}/>
