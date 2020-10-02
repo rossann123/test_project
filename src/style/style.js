@@ -1,15 +1,16 @@
-.box{
 
-    minHeight: "100px",
-    maxWidth: "500px"
+const style={
+    exampleBox:{
+        backgroundColor:"yellow",
+        height:"100px",
+        width:"100px"
+    },
+    anotherOne:{
 
+    },
+    awakenings:{
 
-}
-
-.theOtherBox{
-    background-color:"red",
-    height:"100px",
-    width:"500px"
-}
+    }
+};
 
 export default style;
