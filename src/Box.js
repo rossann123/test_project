@@ -1,33 +1,13 @@
 import React from 'react';
-import Data from "./components/Data";
+
 
 function Box(props){
 
     const [id]=React.useState(props.name);
-
-
-    var [count, setCount] = React.useState(0);
-    const [color, setColor] = React.useState ("black");
-
-    const colors = ["blue","red","yellow"];
-    const randColor = colors[Math.floor(Math.random() * colors.length)];
-
-    React.useEffect(()=>{
-        if (count === 0){
-            setColor("black")
-        }
-        else if(count % 5 ===0){
-            setColor(randColor)
-        }
-        else{
-            setColor("black")
-        }
-
-    }, [color, randColor, count]);
-
+    const [color] = React.useState (props.color);
 
     return(
-        <div style={{color: "white", backgroundColor: color, height: "200px", width: "200px", marginTop: "20px", marginBottom: "20px"}}>
+        <div style={{marginTop: "30px", marginLeft: "30px", backgroundColor: color, color: "white", height: "50px", width: "200px", marginBottom: "30px"}}>
             {id}
         </div>
     )

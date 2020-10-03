@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from "./components/Nav";
 import Data from "./components/Data";
 
+
 import './style/App.css';
 import{
     BrowserRouter as Router,
