@@ -6,7 +6,7 @@ function Data(props){
 
     const [count, setCount] = React.useState(0);
     const [color, setColor] = React.useState ("black");
-    const [data, setData] = React.useState([{id: "This is a box"}]);
+    const [data, setData] = React.useState([{id: "Box"}]);
     const [submit, setSubmit] = React.useState(false);
 
     const colors = ["blue","red","yellow"];
@@ -27,7 +27,7 @@ function Data(props){
 
     React.useEffect(()=>{
         let ogData = data;
-        ogData.push({id: "...This is also a box..."});
+        ogData.push({id: "New Box"});
         setData(ogData);
     }, [data, submit]);
 
