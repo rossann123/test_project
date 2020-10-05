@@ -1,9 +1,9 @@
 import React from 'react';
-import Data from "./Data";
+import DataPage from "./DataPage";
 
 function Objects(){
     const [array]=React.useState([{
-        name: "Anna",
+        name: "Wesley",
         age: 20,
         color: "red",
         id:"My favorite color is red"
@@ -20,7 +20,7 @@ function Objects(){
     }
     ]);
     const arrayEles = array.map((bx, idx)=>
-        <Data name={bx.name}  age={bx.age} color={bx.color} id={bx.id} key={idx}/>
+        <DataPage name={bx.name}  age={bx.age} color={bx.color} id={bx.id} key={idx}/>
     );
     return(
         <div>

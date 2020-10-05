@@ -1,27 +1,20 @@
-import React from 'react';
-import Box from "../Box";
-import style from "../style/style";
-
+import React from "react";
+import {Link} from "react-router-dom";
 function Home(){
-    const [toggle, setToggle] = React.useState("Hiya");
-    const [color, setColor]= React.useState("blue");
-    const [boxInfo]=React.useState([{name:"Anna", age:20},{name:"Emily", age:22},{name:"Kenzie", age:21}]);
-
-    const boxEles = boxInfo.map((bx, idx)=>
-        <Box name={bx.name} age={bx.age} key={idx}/>
-    );
-
     return (
-        <div className="homePage" style={{backgroundColor:color, color: "white"}}>
-            <div className="cool">
-                {toggle}
+        <div className="homePage">
+            <div className="block1" style={{marginTop: "20px", height: "100px", width: "100px", borderWidth: "2px", backgroundColor:"Green"}}>
+                <Link to={"/Green"}>Green</Link>
             </div>
-            <div style={style.exampleBox}></div>
-            <button onClick={()=>setToggle("Hello there")}>Click Me</button>
-            <button onClick={()=>setColor("red")}>Change Color</button>
-            {boxEles}
+            <div className="block1" style={{marginTop: "20px", height: "100px", width: "100px", borderWidth: "2px", backgroundColor:"Blue"}}>
+                <Link to={"/Blue"}>Blue</Link>
+            </div>
+            <div className="block1" style={{marginTop: "20px", height: "100px", width: "100px", borderWidth: "2px", backgroundColor:"Red"}}>
+                <Link to={"/Red"}>Red</Link>
+            </div>
+
         </div>
-    );
+    )
 }
 
 export default Home;
