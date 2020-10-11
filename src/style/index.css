@@ -12,30 +12,26 @@ code {
     monospace;
 }
 
-.html{
-  background-color: blue;
-}
 
-.box{
-  background-color: lightsalmon;
-  min-height: 100px;
-  max-width: 200px;
-}
+
 
 img{
   height: 100px;
   width: 100px;
+  padding-left: 100px;
 }
 
 .container{
   position: relative;
   display: inline-flex;
   width: 300px;
+
 }
 
 .item{
   flex-grow: 1;
   margin: 10px;
   height: 300px;
-  background-color: lightcoral;
+  background-color: lightsalmon;
+  padding-left: 20px;
 }
