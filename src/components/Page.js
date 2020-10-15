@@ -1,5 +1,6 @@
 import React from "react";
-function DataPage(props){
+function Page(props){
+
     const [boxInfo]=React.useState(
         [
             {
@@ -75,15 +76,17 @@ function DataPage(props){
                 img: "https://cdn.shopify.com/s/files/1/1052/2158/products/34905_TheOffice_PamBeesly_WEB.png?v=1585691958"
             }
         ]);
+
     return(
         <div>
-            {boxInfo.filter(funko => funko.category === props.match.params.id).map(filteredFunko => (
+            {boxInfo.filter(funko => funko.name === "Goku").map(filteredFunko => (
                 <div class={"container"}>
                     <div class={"item"}>
                         <h1>{"Name: " + filteredFunko.name}</h1>
                         <h2>{"Category: " + filteredFunko.category}</h2>
                         <h2>{"Value: " + filteredFunko.value}</h2>
                         <img src={filteredFunko.img} alt={"Funko"}/>
+                        {props.match.params.id}
                     </div>
                 </div>
             ))}
@@ -91,4 +94,4 @@ function DataPage(props){
     )
 }
 
-export default DataPage;
+export default Page;
