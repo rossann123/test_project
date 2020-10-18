@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style/index.css';
-import App from './components/Wrapper';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 // eslint-disable-next-line no-unused-expressions,react/style-prop-object
 
