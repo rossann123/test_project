@@ -15,7 +15,7 @@ function Box(props){
                 <h1>Name: {name}</h1>
                 <h2>Category: {category}</h2>
                 <h3>Value: {value}</h3>
-                <button><Link to={"/Page/"+name}>More Info</Link></button>
+                <button><Link to={"/dataPage/"+name}>More Info</Link></button>
                 <img src={img} alt="Funko"/>
             </div>
         </div>
