@@ -1,0 +1,39 @@
+.character{
+  flex-grow: 1;
+  width: 300px;
+  margin: 10px;
+  height: 300px;
+  background-color: orangered;
+  padding-left: 30px;
+  color: white;
+  align-content: center;
+  display: inline-block;
+  vertical-align: top;
+}
+.App {
+  text-align: center;
+}
+
+img{
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  padding-left: 45px;
+}
+
+.wrapper {
+  align-content: center;
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+
+
+
+
+
+
+

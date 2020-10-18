@@ -1,29 +1,30 @@
 import React from 'react';
-import Home from "./components/Home";
-import DataPage from "./components/DataPage";
+import './App.css'
+import Wrapper from "./components/Wrapper";
 import Nav from "./components/Nav";
-import Page from "./components/Page";
-import{
+import DataPage from "./components/DataPage";
+
+
+
+import {
     BrowserRouter as Router,
-    Switch,
     Route,
-} from "react-router-dom"
+} from "react-router-dom";
+
+
+
 
 function App() {
-
-
     return (
         <div className="App">
             <Router>
                 <Nav/>
-                <Switch>
-                    <Route path={"/Page/"} component={Page}/>
-                    <Route path={"/dataPage/:id"} component={DataPage}/>
-                    <Route path={"/"} component={Home}/>
-                </Switch>
+                <Route exact path={"/"} component={Wrapper}/>
+                <Route path={"/dataPage/:id"} component={DataPage}/>
             </Router>
         </div>
     );
 }
+
 
 export default App;
