@@ -1,12 +1,8 @@
 import React from 'react';
-
 import './App.css';
 import Wrapper from "./components/Wrapper";
 import Nav from "./components/Nav";
 import DataPage from "./components/DataPage";
-
-
-
 import {
     BrowserRouter as Router,
     Switch,
@@ -22,7 +18,7 @@ function App() {
             <Router>
                 <Nav/>
                 <Switch>
-                    <Route exact path={"/"} component={Wrapper}/>
+                    <Route path={"/"} component={Wrapper}/>
                     <Route path={"/dataPage/:id"} component={DataPage}/>
                 </Switch>
             </Router>

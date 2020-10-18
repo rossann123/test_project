@@ -1,6 +1,8 @@
 import React from "react";
 import data from "./Data";
-import Box from "../Box";
+import Box from "./Box";
+import Nav from "./Nav";
+
 function Wrapper(){
     const boxInfo = data.map((bx, idx)=>
 
@@ -10,7 +12,9 @@ function Wrapper(){
 
     return(
         <div>
+            {Nav}
             {boxInfo}
+
 
         </div>
 

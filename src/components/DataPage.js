@@ -1,7 +1,11 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import data from "./Data";
-import Box from "../Box";
+import Box from "./Box";
+
+
+
+
 function DataPage(props){
 
     const boxInfo = data.map((bx, idx)=>
@@ -22,7 +26,7 @@ function DataPage(props){
 
                 </div>
             ))}
-            {boxInfo.filter(funko => funko.props.name === "Jim").map(filteredFunko => (
+            {boxInfo.filter(funko => funko.props.name === props.match.params.id).map(filteredFunko => (
                 <div className={"container"}>
                     <div className={"item"}>
                         <h1>{"Name: " + filteredFunko.props.name}</h1>
@@ -33,6 +37,8 @@ function DataPage(props){
                     </div>
                 </div>
             ))}
+
+
 
         </div>
     )
