@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 function DataPage(props){
     const [boxInfo]=React.useState(
         [
@@ -83,7 +84,9 @@ function DataPage(props){
                         <h1>{"Name: " + filteredFunko.name}</h1>
                         <h2>{"Category: " + filteredFunko.category}</h2>
                         <h2>{"Value: " + filteredFunko.value}</h2>
+                        <button><Link to={"/Page"}>More Info</Link></button>
                         <img src={filteredFunko.img} alt={"Funko"}/>
+
                     </div>
                 </div>
             ))}

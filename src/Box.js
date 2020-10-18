@@ -8,12 +8,6 @@ function Box(props){
     const [value]=React.useState(props.value);
     const [img]=React.useState(props.img);
 
-    const [filter, setFilter]=React.useState("Goku");
-
-    function FunkoFilter(){
-        setFilter(props.name)
-
-    }
 
     return(
         <div class={"container"}>
@@ -21,9 +15,7 @@ function Box(props){
                 <h1>Name: {name}</h1>
                 <h2>Category: {category}</h2>
                 <h3>Value: {value}</h3>
-                <button onClick={FunkoFilter}>Apply Filter</button>
-                <button><Link to={"/FunkoPage"}>Info</Link></button>
-                {filter}
+                <button><Link to={"/Page"}>More Info</Link></button>
                 <img src={img} alt="Funko"/>
             </div>
         </div>
