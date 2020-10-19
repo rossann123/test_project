@@ -15,12 +15,10 @@ function Box(props){
 
         <div className="character">
             <Link to={"/dataPage/"+name}>
-
-                <img src={img} alt={img}/>
                 <h1>Name: {name}</h1>
                 <h2>Category: {category}</h2>
                 <h3>Value: {value}</h3>
-
+                <img src={img} alt={img}/>
 
             </Link>
         </div>
