@@ -1,29 +1,36 @@
-import React from 'react'
-import {Link} from "react-router-dom";
+import React from 'react';
 
 function Box(props){
 
     const [name]=React.useState(props.name);
-    const [category] = React.useState(props.category);
-    const [value] = React.useState(props.value);
-    const [img] = React.useState(props.img);
+    const [number, setNumber]=React.useState(props.age);
+    const [color,setColor]=React.useState("#00FF00");
+    const [items]=React.useState(["Cool", "Stuff", "Things"])
+
+    const addUp = ()=>{
+        setNumber(number+10);
+        if(number>=80){
+            setColor("#E0FFFF")
+        }
+    };
+
+    let style ={
+        backgroundColor:color
+    };
+
+    const thingEles = items.map((it, idx)=>
+        <h3 key={idx}>{it}</h3>
+    );
 
 
-
-
-    return (
-
-        <div className="character">
-            <Link to={"/dataPage/"+name}>
-                <h1>Name: {name}</h1>
-                <h2>Category: {category}</h2>
-                <h3>Value: {value}</h3>
-                <img src={img} alt={img}/>
-
-            </Link>
+    return(
+        <div className={props.name==="Emily"?"theOtherBox":"box"} style={style}>
+            {props.name==="Anna"?<h1>Anna is the coolest</h1>:<h1>{name}</h1>}
+            {/*{nameEle}*/}
+            {number<100&&<button onClick={addUp}>Number is {number}</button>}
+            {thingEles}
         </div>
     )
 }
-
 
 export default Box;

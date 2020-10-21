@@ -1,4 +1,3 @@
-
 const style={
     exampleBox:{
         backgroundColor:"yellow",

@@ -1,42 +1,42 @@
 import React from 'react';
-import data from "./Data";
 import Box from "./Box";
 
-
-
 function DataPage(props){
-    const dataEles = data.map((bx, idx)=>
-        <Box name={bx.name} category={bx.category} value={bx.value} img={bx.img} id = {bx.id} key={idx} />
-    );
+
+    const [number,setNumber]=React.useState(0);
+    const [color,setColor]=React.useState("purple");
+    const [data,setData]=React.useState([{name:"Anna", age:20}, {name:"Kenzie", age:21}]);
+    const [submit, setSubmit]=React.useState(false);
+
+    React.useEffect(()=>{
+        if(number>5){
+            setColor("red");
+        }
+    },[number]);
+
+    React.useEffect(()=>{
+
+        let ogData = data;
+        ogData.push({name:"Emily", age:22});
+        setData(ogData);
+
+    }, [submit]);
+
+    let boxEles = data.map((it,idx)=>
+        <Box name={it.name} age={it.age}/>
+    )
 
     return(
         <div>
-
-            {dataEles.filter(funko => funko.props.category === props.match.params.id).map(Funko => (
-
-                <div className="character">
-                    <div>
-                        <h1>{"Name: " + Funko.props.name}</h1>
-                        <h2>{"Category: " + Funko.props.category}</h2>
-                        <h2>{"Value: " + Funko.props.value}</h2>
-                        <img src={Funko.props.img} alt={props.img}/>
-
-                    </div>
-                </div>
-            ))}
-
-            {dataEles.filter(funko => funko.props.name === props.match.params.id).map(Funko => (
-                <div>
-                    <div className="character">
-                        <h1>{"Name: " + Funko.props.name}</h1>
-                        <h2>{"Category: " + Funko.props.category}</h2>
-                        <h2>{"Value: " + Funko.props.value}</h2>
-                        <img src={Funko.props.img} alt={props.img}/>
-
-                    </div>
-                </div>
-            ))}
+            <h1>{props.match.params.id}</h1>
+            <button onClick={()=>setNumber(number+1)}>Increase by 1</button>
+            <button onClick={()=>setNumber(number+2)}>Increase by 2</button>
+            <button onClick={()=>setSubmit(!submit)}>Add Item</button>
+            <h3>{number}</h3>
+            {boxEles}
+            <div style={{backgroundColor:color, height:"100px", width:"100px"}}></div>
         </div>
     )
 }
-export default DataPage;
+
+export default DataPage

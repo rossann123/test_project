@@ -2,7 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
 import TextField from "@material-ui/core/TextField";
-function Home(){
+function CompPage(){
     const [checked, setCheck]=React.useState(true);
     const [checked1, setCheck1]=React.useState(true);
     const [text, setText]=React.useState("");
@@ -12,18 +12,18 @@ function Home(){
     const handleCheck1 = (event)=>{
         setCheck1(event.target.checked1);
     };
-    const handleText = (event)=>{
-        setText(event.target.text);
-    }
+     const handleText = (event)=>{
+         setText(event.target.text);
+     }
     return(
         <div>
             <Button variant={"contained"} color={"secondary"}>Some Button</Button>
-            <Checkbox checked={checked} onChange={handleCheck} color={"primary"}/>
-            <Checkbox checked1={checked1} onChange={handleCheck1}/>
+            <Checkbox checked={checked} onChange={handleCheck} color={"red"}/>
+            <Checkbox checked={checked1} onChange={handleCheck1}/>
             <TextField onChange={handleText} label={"Name"}/>
             <TextField onChange={handleText} label={"Number"}/>
             {text}
         </div>
     );
 }
-export default Home;
+export default CompPage;

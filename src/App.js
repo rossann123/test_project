@@ -1,30 +1,26 @@
 import React from 'react';
-import './App.css'
-import Wrapper from "./components/Wrapper";
+import './App.css';
+import Home from "./components/Home";
 import Nav from "./components/Nav";
-import DataPage from "./components/DataPage";
-
-
-
 import {
     BrowserRouter as Router,
-    Route,
+    Switch,
+    Route
 } from "react-router-dom";
 
-
-
-
 function App() {
+
+
     return (
         <div className="App">
             <Router>
                 <Nav/>
-                <Route exact path={"/"} component={Wrapper}/>
-                <Route path={"/dataPage/:id"} component={DataPage}/>
+                <Switch>
+                    <Route path={"/"} component={Home}/>
+                </Switch>
             </Router>
         </div>
     );
 }
-
 
 export default App;
