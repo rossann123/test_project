@@ -9,7 +9,7 @@ import SimpleStuff from "./components/SimpleStuff";
 import SnackBar from "./components/SnackBar";
 import AppBar from "./components/AppBar";
 import Subscription from "./components/Subscription";
-import TextField from "./components/TextField";
+import Form from "./components/Form";
 import {
     BrowserRouter as Router,
     Switch,
@@ -30,7 +30,7 @@ function App() {
                     <Route path={"/simpleStuff"} component={SimpleStuff}/>
                     <Route path={"/checklist"} component={Checklist}/>
                     <Route path={"/comp"} component={CompPage}/>
-                    <Route path={"/textField"} component={TextField}/>
+                    <Route path={"/form"} component={Form}/>
                     <Route path={"/dataPage/:id"} component={DataPage}/>
                     <Route path={"/"} component={Home}/>
                 </Switch>

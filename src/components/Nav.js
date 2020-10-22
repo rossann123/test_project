@@ -32,7 +32,7 @@ export default function SimpleMenu() {
                 <MenuItem onClick={handleClose}><Link to={"/comp"}>How to Make an Infographic</Link></MenuItem>
                 <MenuItem onClick={handleClose}><Link to={"/appBar"}>Infographic Example</Link></MenuItem>
                 <MenuItem onClick={handleClose}><Link to={"/subscription"}>Magazine Subscription</Link></MenuItem>
-                <MenuItem onClick={handleClose}><Link to={"/textfield"}>Info Form</Link></MenuItem>
+                <MenuItem onClick={handleClose}><Link to={"/form"}>Info Form</Link></MenuItem>
             </Menu>
         </div>
     );
