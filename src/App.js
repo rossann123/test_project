@@ -1,7 +1,15 @@
 import React from 'react';
-import './App.css';
+import "./App.css"
 import Home from "./components/Home";
+import DataPage from "./components/DataPage";
 import Nav from "./components/Nav";
+import CompPage from "./components/CompPage";
+import Checklist from "./components/Checklist";
+import SimpleStuff from "./components/SimpleStuff";
+import SnackBar from "./components/SnackBar";
+import AppBar from "./components/AppBar";
+import Subscription from "./components/Subscription";
+import TextField from "./components/TextField";
 import {
     BrowserRouter as Router,
     Switch,
@@ -16,6 +24,14 @@ function App() {
             <Router>
                 <Nav/>
                 <Switch>
+                    <Route path={"/subscription"} component={Subscription}/>
+                    <Route path={"/appBar"} component={AppBar}/>
+                    <Route path={"/snackBar"} component={SnackBar}/>
+                    <Route path={"/simpleStuff"} component={SimpleStuff}/>
+                    <Route path={"/checklist"} component={Checklist}/>
+                    <Route path={"/comp"} component={CompPage}/>
+                    <Route path={"/textField"} component={TextField}/>
+                    <Route path={"/dataPage/:id"} component={DataPage}/>
                     <Route path={"/"} component={Home}/>
                 </Switch>
             </Router>
