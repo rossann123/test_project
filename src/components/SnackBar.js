@@ -21,7 +21,7 @@ export default function SimpleSnackbar() {
 
     return (
         <div>
-            <Button style={{float: "left"}} onClick={handleClick}>Snack Bar Here <span role="img" aria-label="snack"></span></Button>
+            <Button style={{float: "left"}} onClick={handleClick}>Snack Bar Here <span role="img" aria-label="snack">🥪</span></Button>
             <Snackbar
                 anchorOrigin={{
                     vertical: 'bottom',
