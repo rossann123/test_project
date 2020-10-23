@@ -1,23 +1,11 @@
 import React from "react";
 import Checkbox from "@material-ui/core/Checkbox";
-import { withStyles } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-const GreenCheckbox = withStyles({
-    root: {
-        color: green[400],
-        '&$checked': {
-            color: green[600],
-        },
-    },
-    checked: {},
-})((props) => <Checkbox color="default" {...props} />);
-
-
-
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import {CheckCircle, CheckCircleOutline} from "@material-ui/icons";
 export default function FormControlLabelPosition() {
     return (
         <div>
@@ -43,10 +31,8 @@ export default function FormControlLabelPosition() {
                         labelPlacement="start"
                     />
                     <FormControlLabel
-                        value="start"
-                        control={<GreenCheckbox/>}
-                        label="CINNAMON ROLLS!"
-                        labelPlacement="start"
+                        control={<Checkbox icon={<CheckCircleOutlineIcon/>} checkedIcon={<CheckCircleOutline/>} />}
+                        label="CINNAMON ROLLS!" labelPlacement="start"
                     />
 
                 </FormGroup>
