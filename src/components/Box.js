@@ -26,7 +26,7 @@ function Box(props){
     return(
         <div className={props.name==="Emily"?"theOtherBox":"box"} style={style}>
             {props.name==="Anna"?<h1>Anna is the coolest</h1>:<h1>{name}</h1>}
-            {/*{nameEle}*/}
+            
             {number<100&&<button onClick={addUp}>Number is {number}</button>}
             {thingEles}
         </div>
