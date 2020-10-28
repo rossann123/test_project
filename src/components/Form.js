@@ -1,66 +1,36 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import fire from "./Fire";
 
-export default class SimpleFormExample extends React.Component {
-    state = {
-        formData: {
-            name: '',
-            age: '',
-        },
-        submitted: false,
-    }
+function Form(){
+    const [names, setNames]=React.useState([]);
+    const [submit, setSubmit]=React.useState(false);
+    const db = fire.firestore();
 
-    handleChange = (event) => {
-        const { formData } = this.state;
-        formData[event.target.name] = event.target.value;
-        this.setState({ formData });
-    }
+    const handleChange = prop => event =>{
+    setNames({
+        ...names, [prop]: event.target.value
+    });
+};
 
-    handleSubmit = () => {
-        this.setState({ submitted: true }, () => {
-            setTimeout(() => this.setState({ submitted: false }), 5000);
+const handleSubmit = ()=>{
+    db.collection("people").add(names).then(()=>{
+        setNames({
+            name:"",
+            age:"",
         });
-    }
+        setSubmit(!submit);
+    })
+};
 
-    render() {
-        const { formData, submitted } = this.state;
-        return (
-            <ValidatorForm
-                ref="form"
-                onSubmit={this.handleSubmit}
-            >
-                <h2>User Information Form</h2>
-                <TextValidator
-                    label="Name"
-                    onChange={this.handleChange}
-                    name="name"
-                    value={formData.name}
-                    validators={['matchRegexp:^[A-Za-z]{2,}$', 'required']}
-                    errorMessages={['Enter more characters. No numbers']}
-                />
-                <br />
-                <TextValidator
-                    label="Age"
-                    onChange={this.handleChange}
-                    name="age"
-                    value={formData.age}
-                    validators={['minNumber:10', 'required']}
-                    errorMessages={['Must be a number and greater than 10']}
-                />
-                <br />
-                <Button
-                    color="secondary"
-                    variant="contained"
-                    type="submit"
-                    disabled={submitted}
-                >
-                    {
-                        (submitted && "You've successfully submitted!")
-                        || (!submitted && 'Submit')
-                    }
-                </Button>
-            </ValidatorForm>
-        );
-    }
+
+
+return(
+    <div>
+        <input placeholder={"Name..."} onChange={handleChange("name")}/>
+        <input placeholder={"Age..."} onChange={handleChange("age")}/>
+        <button onClick={handleSubmit}>Submit</button>
+    </div>
+)
 }
+export default Form;
+

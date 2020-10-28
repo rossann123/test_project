@@ -3,6 +3,8 @@ import './src/App.css'
 import Home from "./components/Home";
 import DataPage from "./components/DataPage";
 import Nav from "./components/Nav";
+import CoolPerson from "./components/CoolPerson"
+import Form from "./components/Form";
 import {
     BrowserRouter as Router,
     Switch,
@@ -18,7 +20,9 @@ function App() {
             <Router>
                 <Nav/>
                 <Switch>
+                    <Route path={"/CoolPerson"} component={CoolPerson}/>
                     <Route path={"/firePage"} component={FirePage}/>
+                    <Route path={"/form"} component={Form}/>
                     <Route path={"/dataPage/:id"} component={DataPage}/>
                     <Route path={"/"} component={Home}/>
                 </Switch>
