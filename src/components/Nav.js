@@ -28,7 +28,6 @@ export default function SimpleMenu() {
                 onClose={handleClose}
             >
                 <MenuItem onClick={handleClose}><Link to={"/CoolPerson"}>Cool Person</Link></MenuItem>
-                <MenuItem onClick={handleClose}><Link to={"/form"}>Form</Link></MenuItem>
                 <MenuItem onClick={handleClose}><Link to={"/firePage"}>Song Page</Link></MenuItem>
             </Menu>
         </div>
