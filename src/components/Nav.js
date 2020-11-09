@@ -1,35 +1,16 @@
-import {Link} from 'react-router-dom';
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+import React from 'react'
+import {Link} from "react-router-dom";
 
-export default function SimpleMenu() {
-    const [anchorEl, setAnchorEl] = React.useState(null);
+function Nav(){
+    return(
 
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
-    return (
-        <div style={{backgroundColor:"red", width:"120px", textAlign:"center"}}>
-            <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                Navigation
-            </Button>
-            <Menu
-                id="simple-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-            >
-                <MenuItem onClick={handleClose}><Link to={"/CoolPerson"}>Cool Person</Link></MenuItem>
-                <MenuItem onClick={handleClose}><Link to={"/firePage"}>Song Page</Link></MenuItem>
-            </Menu>
-        </div>
-    );
+        <nav>
+            <button style={{backgroundColor:"lightblue"}}><Link to={"/cartPage"}>Cart</Link></button>
+            <button style={{backgroundColor:"lightblue"}}><Link to={"/adminPage"}>Admin</Link></button>
+            <button style={{backgroundColor:"lightblue"}}><Link to={"/storePage"}>Store</Link></button>
+        </nav>
+    )
 }
+
+export default Nav;
+

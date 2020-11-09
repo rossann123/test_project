@@ -1,20 +1,10 @@
-html{
-  background-color: #ff7e0c;
+.img{
+  width: 50px;
+  height: 50px;
 }
 
-.box{
-  background-color: rebeccapurple;
-  min-height: 100px;
-  width: 500px;
-  color:white;
-}
 
-.theOtherBox{
-  background-color: rebeccapurple;
-  min-height: 100px;
-  width: 500px;
-  color:orange;
-}
+
 
 .App {
   text-align: center;

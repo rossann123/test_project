@@ -1,26 +1,24 @@
 import React from 'react';
-import './src/App.css'
-import Home from "./components/Home";
 import Nav from "./components/Nav";
-import CoolPerson from "./components/CoolPerson"
+import CartPage from "./components/CartPage";
+import AdminPage from "./components/AdminPage";
 import {
     BrowserRouter as Router,
     Switch,
     Route
 } from "react-router-dom";
-import FirePage from "./components/FirePage";
+import StorePage from "./components/StorePage";
 
 function App() {
-
 
     return (
         <div className="App">
             <Router>
                 <Nav/>
                 <Switch>
-                    <Route path={"/CoolPerson"} component={CoolPerson}/>
-                    <Route path={"/firePage"} component={FirePage}/>
-                    <Route path={"/"} component={Home}/>
+                    <Route path={"/admin"} component={AdminPage}/>
+                    <Route path={"/cart"} component={CartPage}/>
+                    <Route path={"/"} component={StorePage}/>
                 </Switch>
             </Router>
         </div>
