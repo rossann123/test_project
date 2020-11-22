@@ -12,6 +12,11 @@ export default function CartPage({ cart, setCart }) {
         setCart([]);
     };
 
+    const purchaseItems = () => {
+        alert('Thank you for your purchase.');
+    };
+
+
     const setQuantity = (product, amount) => {
         const newCart = [...cart];
         newCart.find(
@@ -29,7 +34,7 @@ export default function CartPage({ cart, setCart }) {
         <>
             <h1>Cart</h1>
             {cart.length > 0 && (
-                <button onClick={clearCart}>Clear</button>
+                <button onClick={clearCart}>Clear Cart</button>
             )}
             <div className="products">
                 {cart.map((product, idx) => (
@@ -56,8 +61,8 @@ export default function CartPage({ cart, setCart }) {
             </div>
 
             <div>Total Cost: ${getTotalSum()}</div>
-            {cart.length === 0 ? " " : <button onClick={() => alert('Thank you for purchasing from us!')}>
-                Finish
+            {cart.length === 0 ? " " : <button onClick={() => {clearCart(); purchaseItems()}}>
+                Purchase
             </button>}
         </>
     );

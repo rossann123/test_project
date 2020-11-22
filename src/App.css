@@ -1,6 +1,37 @@
-.img{
-  width: 50px;
-  height: 50px;
+.products {
+  display: grid;
+  width: 800px;
+  height: 500px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.products img {
+  width: 100%;
+}
+
+.product {
+  padding: 40px;
+}
+
+button {
+  font-size: 15px;
+  padding: 12px;
+  box-shadow: white;
+  border-radius: 8px;
+}
+
+header {
+  background-color: lightslategray;
+  height: 70px;
+  padding-top: 20px;
+}
+.lowStock{
+  background-color: red;
+  color: darkgray;
+}
+.highStock{
+  background-color: blue;
+  color: white;
 }
 
 

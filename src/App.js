@@ -1,26 +1,46 @@
-import React from 'react';
-import Nav from "./components/Nav";
-import CartPage from "./components/CartPage";
-import AdminPage from "./components/AdminPage";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from "react-router-dom";
+import React, { useState } from 'react';
+import './App.css';
 import StorePage from "./components/StorePage";
+import CartPage from "./components/CartPage";
+
+const STORE_PAGE = 'StorePage';
+const CART_PAGE = 'CartPage';
+const ADMIN = 'AdminPage';
 
 function App() {
+    const [cart, setCart] = useState([]);
+    const [page, setPage] = useState(STORE_PAGE);
+
+    const navigateTo = (nextPage) => {
+        setPage(nextPage);
+    };
+
+    const getCartTotal = () => {
+        return cart.reduce(
+            (sum, { quantity }) => sum + quantity,
+            0
+        );
+    };
 
     return (
         <div className="App">
-            <Router>
-                <Nav/>
-                <Switch>
-                    <Route path={"/admin"} component={AdminPage}/>
-                    <Route path={"/cart"} component={CartPage}/>
-                    <Route path={"/"} component={StorePage}/>
-                </Switch>
-            </Router>
+            <header>
+                <button onClick={() => navigateTo(ADMIN)}>
+                    Admin
+                </button>
+                <button onClick={() => navigateTo(STORE_PAGE)}>
+                    Store
+                </button>
+                <button onClick={() => navigateTo(CART_PAGE)}>
+                    My Cart ({getCartTotal()})
+                </button>
+            </header>
+            {page === STORE_PAGE && (
+                <StorePage cart={cart} setCart={setCart} />
+            )}
+            {page === CART_PAGE && (
+                <CartPage cart={cart} setCart={setCart} />
+            )}
         </div>
     );
 }
