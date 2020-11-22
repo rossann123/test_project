@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import StorePage from "./components/StorePage";
 import CartPage from "./components/CartPage";
+import AdminPage from "./components/AdminPage";
 
 const STORE_PAGE = 'StorePage';
 const CART_PAGE = 'CartPage';
